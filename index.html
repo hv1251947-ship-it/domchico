@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Dom Chico</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff4e3;
+        }
+
+        header {
+            background: linear-gradient(90deg, #c0392b, #e74c3c);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #c0392b;
+            margin-top: 30px;
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px;
+            color: #c0392b;
+        }
+
+        .card p {
+            padding: 0 15px 15px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+            font-size: 16px;
+        }
+
+        .whatsapp-btn {
+            display: block;
+            width: 100%;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+
+        footer {
+            background: #c0392b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    🍕 Pizzaria Dom Chico
+</header>
+
+<div class="container">
+
+    <h2>Nosso Cardápio</h2>
+
+    <div class="cardapio-grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601924582975-7c31a2bb7b6d" alt="Quatro Queijos">
+            <h3>Quatro Queijos</h3>
+            <p>Mussarela, parmesão, gorgonzola e catupiry.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be0f" alt="Calabresa">
+            <h3>Calabresa</h3>
+            <p>Calabresa fatiada, cebola e mussarela.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94" alt="Portuguesa">
+            <h3>Portuguesa</h3>
+            <p>Presunto, ovo, cebola, azeitona, ervilha e mussarela.</p>
+        </div>
+
+    </div>
+
+    <h2>Monte sua Pizza 🍕</h2>
+
+    <label>Escolha o sabor personalizado:</label>
+    <input type="text" id="sabor" placeholder="Digite o sabor da sua pizza...">
+
+    <!-- Botão único de WhatsApp -->
+    <a id="zap" target="_blank" class="whatsapp-btn">
+        📱 Fazer pedido pelo WhatsApp
+    </a>
+
+</div>
+
+<footer>
+    © 2025 Pizzaria Dom Chico – Todos os direitos reservados
+</footer>
+
+<script>
+    // Atualiza o link do WhatsApp conforme o cliente digita o sabor
+    document.getElementById("sabor").addEventListener("input", function () {
+        let sabor = encodeURIComponent(this.value);
+        let link = "https://wa.me/5511111111111?text=Olá,%20quero%20fazer%20um%20pedido.%20Sabor:%20" + sabor;
+        document.getElementById("zap").href = link;
+    });
+</script>
+
+</body>
+</html>
